@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import useLocalStorage from './hooks/useLocalStorage';
 import AddHabitForm from './components/AddHabitForm';
 import HabitList from './components/HabitList';
@@ -10,7 +9,7 @@ import DataExport from './components/DataExport';
 function App() {
   const [habits, setHabits] = useLocalStorage('habits', []);
   const [completions, setCompletions] = useLocalStorage('completions', {});
-  const [activeTab, setActiveTab] = useState('habits');
+  const [activeTab, setActiveTab] = useLocalStorage('activeTab', 'habits');
 
   const today = new Date().toISOString().split('T')[0];
 
